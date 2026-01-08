@@ -1,0 +1,24 @@
+// 1️⃣ Importações necessárias
+import org.luaj.vm2.Globals;
+import org.luaj.vm2.LuaValue;
+import org.luaj.vm2.LuaError;
+import org.luaj.vm2.lib.OneArgFunction;
+import org.luaj.vm2.lib.jse.JsePlatform;
+
+// 2️⃣ Dentro da sua Activity
+private Globals luaGlobals;
+
+// Inicializa o LuaJ e sobrescreve print()
+private void initLua() {
+    luaGlobals = JsePlatform.standardGlobals();
+    luaGlobals.set("print", new OneArgFunction() {
+        @Override
+        public LuaValue call(LuaValue arg) {
+            // Aqui você manda pro seu console TextView
+            console.append(arg.tojstring() + "\n");
+            return LuaValue.NIL;
+        }
+    });
+}
+
+// 3️⃣ Executar o código do editor

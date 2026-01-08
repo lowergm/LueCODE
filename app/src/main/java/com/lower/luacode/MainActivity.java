@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         btnTerminal.setOnClickListener(v -> mostrarTerminal());
         btnRodar.setOnClickListener(v -> runLua());
 
-        editor.setText("function mostrar(s)\n\tprint(a)\nend");
+        editor.setText("function mostrar(s)\n\tprint(s)\nend");
         editor.addTextChangedListener(
                 new TextWatcher() {
                     @Override
