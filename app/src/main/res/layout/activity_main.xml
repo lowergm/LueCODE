@@ -1,28 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:layout_height="match_parent">
+    
+    <FrameLayout
+        android:id="@+id/frameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/lineNumbers"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:padding="8dp"
-        android:gravity="top|end"
-        android:textColor="#666666"
-        android:textSize="14sp"
-        android:typeface="monospace" />
+        <LinearLayout
+            android:id="@+id/layoutEditor"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editor"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="top|start"
-        android:inputType="textMultiLine|textNoSuggestions"
-        android:typeface="monospace"
-        android:textSize="14sp"
-        android:background="@android:color/transparent"/>
+            <TextView
+                android:id="@+id/lineNumbers"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:gravity="top|end"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:typeface="monospace"/>
+
+            <EditText
+                android:id="@+id/editor"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="top|start"
+                android:textColor="#FFFFFF"
+                android:background="#1E1E1E"
+                android:textSize="14sp"
+                android:fontFamily="monospace"
+                android:inputType="textMultiLine|textNoSuggestions"/>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/layoutTerminal"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#111111">
+
+            <TextView
+                android:id="@+id/console"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#D4D4D4"
+                android:padding="8dp"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
+    </FrameLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="#252526">
+
+        <Button
+            android:id="@+id/btnEditor"
+            android:text="Editor"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:id="@+id/btnTerminal"
+            android:text="Saída"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+            
+        <Button
+            android:id="@+id/btnRodar"
+            android:text=">"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 </LinearLayout>

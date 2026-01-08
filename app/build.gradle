@@ -32,4 +32,5 @@ dependencies {
     implementation libs.androidx.appcompat
     implementation libs.material
     implementation libs.androidx.constraintlayout
+    implementation 'org.luaj:luaj-jse:3.0.1'
 }
